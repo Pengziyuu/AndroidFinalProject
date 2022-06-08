@@ -6,4 +6,5 @@
     <string name="pause">暫停</string>
     <string name="resume">繼續</string>
     <string name="reset">取消</string>
+    <string name="lap">計時</string>
 </resources>
