@@ -89,7 +89,7 @@ public class TimerView extends LinearLayout {
         etMin = (EditText) findViewById(R.id.etMin);
         etSec = (EditText) findViewById(R.id.etSec);
 
-        etHour.setText("00");
+        etHour.setText("0");
         etHour.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int before, int count) {
@@ -114,7 +114,7 @@ public class TimerView extends LinearLayout {
             public void afterTextChanged(Editable editable) {
             }
         });
-        etMin.setText("00");
+        etMin.setText("0");
         etMin.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int before, int count) {
@@ -139,7 +139,7 @@ public class TimerView extends LinearLayout {
             public void afterTextChanged(Editable editable) {
             }
         });
-        etSec.setText("00");
+        etSec.setText("0");
         etSec.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int before, int count) {
@@ -226,7 +226,7 @@ public class TimerView extends LinearLayout {
                     break;
                 case MSG_WHAT_TIME_IS_UP:
                     new AlertDialog.Builder(getContext())
-                            .setTitle("時間到")
+                            .setTitle("計時器")
                             .setMessage("時間到")
                             .setNegativeButton("取消", null).show();
 

@@ -37,7 +37,11 @@ public class StopWatchView extends LinearLayout {
 
             @Override
             public void onClick(View view) {
-                adapter.insert(String.format("%d:%d:%d.%d", tenMSecs/100/60/60,tenMSecs/100/60%60, tenMSecs/100%60, tenMSecs%100), 0);
+                if (watchViewCount == 0) {
+                    adapter.insert("圈數   單圈時間", 0);
+                }
+                adapter.insert(String.format("  %d       %d:%d:%d.%d", watchViewCount, tenMSecs/100/60/60,tenMSecs/100/60%60, tenMSecs/100%60, tenMSecs%100), 1);
+                watchViewCount++;
             }
         });
         btnPause = (Button) findViewById(R.id.btnSWPause);
@@ -62,6 +66,7 @@ public class StopWatchView extends LinearLayout {
 
                 stopTimer();
                 tenMSecs = 0;
+                watchViewCount = 0;
                 adapter.clear();
 
                 btnLap.setVisibility(View.GONE);
@@ -133,6 +138,7 @@ public class StopWatchView extends LinearLayout {
         }
     }
 
+    private int watchViewCount = 0;
     private int tenMSecs = 0;
     private Timer timer = new Timer();
     private TimerTask timerTask = null;

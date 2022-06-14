@@ -49,95 +49,105 @@
                     <ListView
                         android:id="@+id/lvAlarmList"
                         android:layout_width="fill_parent"
-                        android:layout_weight="1"
-                        android:layout_height="0dp" >
-                    </ListView>
+                        android:layout_height="0dp"
+                        android:layout_weight="1"></ListView>
 
                     <Button
                         android:id="@+id/btnAddAlarm"
-                        android:text="@string/add_alarm"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_alarm" />
                 </com.example.androidfinalproject.AlarmView>
 
                 <com.example.androidfinalproject.TimerView
                     android:id="@+id/tabTimer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="fill_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <EditText
                             android:id="@+id/etHour"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:gravity="center"
                             android:inputType="number"
-                            android:singleLine="true"/>
+                            android:singleLine="true"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
                         <TextView
-                            android:textAppearance="?android:attr/textAppearanceLarge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=":"/>
+                            android:text=":"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
                         <EditText
                             android:id="@+id/etMin"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:gravity="center"
                             android:inputType="number"
-                            android:singleLine="true"/>
+                            android:singleLine="true"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
                         <TextView
-                            android:textAppearance="?android:attr/textAppearanceLarge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=":"/>
+                            android:text=":"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
                         <EditText
                             android:id="@+id/etSec"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:gravity="center"
                             android:inputType="number"
-                            android:singleLine="true"/>
+                            android:singleLine="true"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:id="@+id/btnGroup"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <Button
                             android:id="@+id/btnStart"
-                            android:text="開始"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="開始" />
+
                         <Button
                             android:id="@+id/btnPause"
-                            android:text="暫停"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="暫停" />
+
                         <Button
                             android:id="@+id/btnResume"
-                            android:text="繼續"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="繼續" />
+
                         <Button
                             android:id="@+id/btnReset"
-                            android:text="取消"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="取消" />
                     </LinearLayout>
                 </com.example.androidfinalproject.TimerView>
 
@@ -148,93 +158,109 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/timeHour"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
                         <TextView
-                            android:text=":"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:gravity="center"
+                            android:text=":"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
                         <TextView
                             android:id="@+id/timeMin"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
                         <TextView
-                            android:text=":"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:gravity="center"
+                            android:text=":"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
                         <TextView
                             android:id="@+id/timeSec"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
                         <TextView
-                            android:text=","
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:gravity="center"
+                            android:text="."
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
                         <TextView
                             android:id="@+id/timeMSec"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
                     </LinearLayout>
 
                     <ListView
                         android:id="@+id/lvWatchTimeList"
                         android:layout_width="fill_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1">
-                    </ListView>
+                        android:layout_weight="1"></ListView>
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <Button
                             android:id="@+id/btnSWStart"
-                            android:text="@string/start"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1"
+                            android:text="@string/start" />
+
                         <Button
                             android:id="@+id/btnSWPause"
-                            android:text="@string/pause"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1"
+                            android:text="@string/pause" />
+
                         <Button
                             android:id="@+id/btnSWResume"
-                            android:text="@string/resume"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1"
+                            android:text="@string/resume" />
+
                         <Button
                             android:id="@+id/btnSWLap"
-                            android:text="@string/lap"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1"
+                            android:text="@string/lap" />
+
                         <Button
                             android:id="@+id/btnSWReset"
-                            android:text="@string/reset"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1"
+                            android:text="@string/reset" />
                     </LinearLayout>
                 </com.example.androidfinalproject.StopWatchView>
             </FrameLayout>
