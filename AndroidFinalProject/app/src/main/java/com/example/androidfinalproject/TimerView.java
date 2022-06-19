@@ -71,6 +71,13 @@ public class TimerView extends LinearLayout {
                 btnResume.setVisibility(View.GONE);
                 btnPause.setVisibility(View.GONE);
                 btnStart.setVisibility(View.VISIBLE);
+
+                btnHm.setVisibility(View.VISIBLE);
+                btnHp.setVisibility(View.VISIBLE);
+                btnMm.setVisibility(View.VISIBLE);
+                btnMp.setVisibility(View.VISIBLE);
+                btnSm.setVisibility(View.VISIBLE);
+                btnSp.setVisibility(View.VISIBLE);
             }
         });
         btnStart.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +89,13 @@ public class TimerView extends LinearLayout {
                 btnStart.setVisibility(View.GONE);
                 btnPause.setVisibility(View.VISIBLE);
                 btnReset.setVisibility(View.VISIBLE);
+
+                btnHm.setVisibility(View.GONE);
+                btnHp.setVisibility(View.GONE);
+                btnMm.setVisibility(View.GONE);
+                btnMp.setVisibility(View.GONE);
+                btnSm.setVisibility(View.GONE);
+                btnSp.setVisibility(View.GONE);
             }
         });
 
@@ -99,6 +113,24 @@ public class TimerView extends LinearLayout {
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 if(!TextUtils.isEmpty(s)) {
                     int value = Integer.parseInt(s.toString());
+
+                    btnHm.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            int x = value;
+                            x--;
+                            etHour.setText(x+"");
+                        }
+                    });
+
+                    btnHp.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            int x = value;
+                            x++;
+                            etHour.setText(x+"");
+                        }
+                    });
 
                     if (value>59) {
                         etHour.setText("59");
@@ -125,6 +157,24 @@ public class TimerView extends LinearLayout {
                 if(!TextUtils.isEmpty(s)) {
                     int value = Integer.parseInt(s.toString());
 
+                    btnMm.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            int x = value;
+                            x--;
+                            etMin.setText(x+"");
+                        }
+                    });
+
+                    btnMp.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            int x = value;
+                            x++;
+                            etMin.setText(x+"");
+                        }
+                    });
+
                     if (value>59) {
                         etMin.setText("59");
                     }else if (value<0) {
@@ -150,6 +200,24 @@ public class TimerView extends LinearLayout {
                 if(!TextUtils.isEmpty(s)) {
                     int value = Integer.parseInt(s.toString());
 
+                    btnSm.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            int x = value;
+                            x--;
+                            etSec.setText(x+"");
+                        }
+                    });
+
+                    btnSp.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            int x = value;
+                            x++;
+                            etSec.setText(x+"");
+                        }
+                    });
+
                     if (value>59) {
                         etSec.setText("59");
                     }else if (value<0) {
@@ -170,6 +238,14 @@ public class TimerView extends LinearLayout {
         btnPause.setVisibility(View.GONE);
         btnResume.setVisibility(View.GONE);
         btnReset.setVisibility(View.GONE);
+
+
+        btnHm = findViewById(R.id.btnHm);
+        btnHp = findViewById(R.id.btnHp);
+        btnMm = findViewById(R.id.btnMm);
+        btnMp = findViewById(R.id.btnMp);
+        btnSm = findViewById(R.id.btnSm);
+        btnSp = findViewById(R.id.btnSp);
     }
 
     private void checkToEnableBtnStart() {
@@ -249,5 +325,6 @@ public class TimerView extends LinearLayout {
     private Timer timer = new Timer();
     private TimerTask timerTask = null;
     private Button btnStart, btnPause, btnResume, btnReset;
+    private Button btnHm, btnHp, btnMm, btnMp, btnSm, btnSp;
     private EditText etHour, etMin, etSec;
 }
