@@ -65,7 +65,8 @@ public class AlarmView extends LinearLayout {
         lvAlarmList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view,final int position, long id) {
-                new AlertDialog.Builder(getContext()).setTitle("操作選項").setItems(new CharSequence[]{"刪除"}, new DialogInterface.OnClickListener() {
+                new AlertDialog.Builder(getContext()).setTitle("操作選項").setItems(new CharSequence[]{"刪除"},
+                        new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
@@ -73,7 +74,6 @@ public class AlarmView extends LinearLayout {
                         case 0:
                             deleteAlarm(position);
                             break;
-
                         default:
                             break;
                         }
@@ -89,7 +89,9 @@ public class AlarmView extends LinearLayout {
         adapter.remove(ad);
         saveAlarmList();
 
-        alarmManager.cancel(PendingIntent.getBroadcast(getContext(), ad.getId(), new Intent(getContext(), AlarmReceiver.class), 0));
+        alarmManager.cancel(PendingIntent.getBroadcast(getContext(),
+                ad.getId(),
+                new Intent(getContext(), AlarmReceiver.class), 0));
     }
 
     private  void  addAlarm() {
@@ -117,14 +119,17 @@ public class AlarmView extends LinearLayout {
                 alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
                         ad.getTime(),
                         5*60*1000,
-                        PendingIntent.getBroadcast(getContext(), ad.getId(), new Intent(getContext(), AlarmReceiver.class), 0));
+                        PendingIntent.getBroadcast(getContext(),
+                                ad.getId(),
+                                new Intent(getContext(), AlarmReceiver.class), 0));
                 saveAlarmList();
             }
         }, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), true).show();
     }
 
     private void saveAlarmList() {
-        SharedPreferences.Editor editor = getContext().getSharedPreferences(AlarmView.class.getName(), Context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = getContext()
+                .getSharedPreferences(AlarmView.class.getName(), Context.MODE_PRIVATE).edit();
 
         StringBuffer sb = new StringBuffer();
         for (int i=0; i < adapter.getCount(); i++) {
@@ -145,7 +150,8 @@ public class AlarmView extends LinearLayout {
     }
 
     private  void readSavedAlarmList(){
-        SharedPreferences sp = getContext().getSharedPreferences(AlarmView.class.getName(), Context.MODE_PRIVATE);
+        SharedPreferences sp = getContext().
+                getSharedPreferences(AlarmView.class.getName(), Context.MODE_PRIVATE);
         String content = sp.getString(KEY_ALARM_LIST, null);
 
         if (content != null) {

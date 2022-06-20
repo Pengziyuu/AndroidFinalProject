@@ -50,7 +50,10 @@ public class TimeView extends LinearLayout {
     private void refreshTime(){
         Calendar c = Calendar.getInstance();
 
-        tvTime.setText(String.format("%d:%d:%d", c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), c.get(Calendar.SECOND)));
+        tvTime.setText(String.format("%d:%d:%d"
+                , c.get(Calendar.HOUR_OF_DAY)
+                , c.get(Calendar.MINUTE)
+                , c.get(Calendar.SECOND)));
     }
 
     private Handler timerHandler = new Handler() {

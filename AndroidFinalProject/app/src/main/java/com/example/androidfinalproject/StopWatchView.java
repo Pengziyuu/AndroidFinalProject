@@ -40,7 +40,12 @@ public class StopWatchView extends LinearLayout {
                 if (watchViewCount == 0) {
                     adapter.insert("圈數   單圈時間", 0);
                 }
-                adapter.insert(String.format("  %d       %d:%d:%d.%d", watchViewCount, tenMSecs/100/60/60,tenMSecs/100/60%60, tenMSecs/100%60, tenMSecs%100), 1);
+                adapter.insert(String.format("  %d       %d:%d:%d.%d",
+                        watchViewCount,
+                        tenMSecs/100/60/60,
+                        tenMSecs/100/60%60,
+                        tenMSecs/100%60,
+                        tenMSecs%100), 1);
                 watchViewCount++;
             }
         });
