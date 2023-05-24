@@ -1,6 +1,8 @@
 Specify the activities or resources are  simply reuse.    
 resources:https://youtube.com/playlist?list=PL1JImX8WgOy8JVM6OUx9zfsmfXuJsmkJ7
+<br/>
 完成影片:https://www.youtube.com/watch?v=G58iw4EcDFw&t=16s
+<br/>
 @時鐘    
 1.顯示當下時間。    
     
